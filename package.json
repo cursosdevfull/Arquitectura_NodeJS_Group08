@@ -1,0 +1,39 @@
+{
+  "name": "arquitectura_nodejs_group08",
+  "version": "1.0.0",
+  "description": "Project using NestJS to create a monorepo",
+  "main": "index.js",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "biome-check": "biome check .",
+    "biome-check:fix": "biome check . --write --unsafe",
+    "format-and-lint": "turbo run biome-check",
+    "format-and-lint:fix": "turbo run biome-check:fix",
+    "typecheck": "turbo run typecheck"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cursosdevfull/Arquitectura_NodeJS_Group08.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cursosdevfull/Arquitectura_NodeJS_Group08/issues"
+  },
+  "homepage": "https://github.com/cursosdevfull/Arquitectura_NodeJS_Group08#readme",
+  "packageManager": "npm@1.1.0",
+  "engines": {
+    "node": ">=22.10.0"
+  },
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "turbo": "^2.4.4"
+  }
+}
