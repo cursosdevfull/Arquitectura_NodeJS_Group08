@@ -1,0 +1,31 @@
+{
+  "name": "arquitectura_nodejs_group08",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cursosdevfull/Arquitectura_NodeJS_Group08.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cursosdevfull/Arquitectura_NodeJS_Group08/issues"
+  },
+  "homepage": "https://github.com/cursosdevfull/Arquitectura_NodeJS_Group08#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.14.0",
+    "reflect-metadata": "^0.2.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
