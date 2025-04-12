@@ -1,0 +1,4 @@
+echo "Running commit-msg hook"
+echo "Checking commit message format"
+npm run commit-check ${1}
+echo "Commit message format check passed"

@@ -1,0 +1,51 @@
+{
+    "$schema": "https://turbo.build/schema.json",
+    "globalDependencies": [".env"],
+    "globalEnv":["PORT"],
+    "tasks": {
+        "build": {
+            "inputs": [
+                "src/**",
+                "tsconfig.json",
+                "tsconfig.*.json",
+                "!package.json"
+            ],
+            "outputs": [
+                "dist/**"
+            ],
+            "dependsOn": [
+                "^build"
+            ]
+        },
+        "format": {
+            "inputs": [
+                "src/**",
+                "test/**",
+                "tsconfig.json",
+                "tsconfig.*.json",
+                "!package.json"
+            ],
+            "outputs": [
+                "dist/**"
+            ]
+        },
+        "start:prod": {
+            "outputs": [
+                "dist/**"
+            ],
+            "persistent": true
+        },
+        "dev": {
+            "cache": false
+        },
+        "//#biome-check": {},
+        "//#biome-check:fix": {
+            "cache": false
+        },
+        "typecheck": {
+            "dependsOn": [
+                "^typecheck"
+            ]
+        }
+    }
+}

@@ -1,0 +1,7 @@
+echo "Running lint-staged"
+
+npm run lint-staged
+
+npm run typecheck
+
+echo "Lint-staged check passed"

@@ -1,0 +1,54 @@
+{
+  "name": "arquitectura_nodejs_group08",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "turbo run build",
+    "format": "turbo run format",
+    "dev": "turbo run dev",
+    "biome-check": "biome check .",
+    "biome-check:fix": "biome check . --write --unsafe",
+    "format-and-lint": "turbo run biome-check",
+    "format-and-lint:fix": "turbo run biome-check:fix",
+    "start:prod": "turbo run start:prod",
+    "typecheck": "turbo run typecheck",
+    "commit-check": "commitlint --edit",
+    "lint-staged": "lint-staged",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cursosdevfull/Arquitectura_NodeJS_Group08.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cursosdevfull/Arquitectura_NodeJS_Group08/issues"
+  },
+  "homepage": "https://github.com/cursosdevfull/Arquitectura_NodeJS_Group08#readme",
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "packageManager": "npm@1.1.0",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@commitlint/cz-commitlint": "^19.8.0",
+    "husky": "^9.1.7",
+    "turbo": "^2.5.0"
+  },
+  "dependencies": {
+    "lint-staged": "^15.5.1"
+  },
+  "lint-staged": {
+    "*.ts": "biome check"
+  }
+}
