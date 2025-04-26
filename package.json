@@ -49,6 +49,6 @@
     "lint-staged": "^15.5.1"
   },
   "lint-staged": {
-    "*.ts": "biome check"
+    "*.ts": "biome check ."
   }
 }
