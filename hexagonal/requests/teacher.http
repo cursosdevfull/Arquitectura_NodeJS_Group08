@@ -1,0 +1,27 @@
+post http://localhost:3000/teacher
+Content-Type: application/json
+
+{
+    "names": "Julio César",
+    "lastname": "Zapata",
+    "email": "julio.zapata@email.com"
+}
+
+###
+get http://localhost:3000/teacher
+
+###
+delete http://localhost:3000/teacher/1746281333979
+
+###
+put http://localhost:3000/teacher/1746281333979
+Content-Type: application/json
+
+{
+    "names": "Luis Fernando",
+    "email": "luis.fernando@email.com"
+}
+
+###
+get http://localhost:3000/teacher/by-page?page=1&limit=5
+
