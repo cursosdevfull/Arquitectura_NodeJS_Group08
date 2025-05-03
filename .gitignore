@@ -1,0 +1,5 @@
+.husky
+.turbo
+apps
+hexagonal
+node_modules

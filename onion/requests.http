@@ -1,0 +1,52 @@
+### Create
+post http://localhost:3000/course
+Content-Type: application/json
+
+{
+    "name": "NestJS",
+    "description": "Architecture for building efficient, scalable Node.js server-side applications",
+    "requirements": [
+        "Node.js >= 14.x",
+        "TypeScript >= 4.x",
+        "npm >= 6.x"
+    ],
+    "duration": 50,
+    "price": 1000,
+    "level": "intermediate",
+    "syllabus": [
+        "Introduction to NestJS",
+        "Setting up the development environment",
+        "Creating a simple REST API",
+        "Understanding modules, controllers, and providers",
+        "Dependency injection in NestJS",
+        "Working with middleware and guards",
+        "Using pipes and interceptors"
+    ],
+    "instructor": "John Doe",
+    "rating": 4.5,
+    "reviews": [
+        {
+            "title": "Great course!",
+            "content": "This course helped me understand NestJS better.",
+            "rating": 5,
+            "createdAt": "2023-10-01T12:00:00Z"
+        }
+    ]
+}
+
+### Get all courses
+get http://localhost:3000/course
+
+### Get course by ID
+get http://localhost:3000/course/1746286957038
+
+### Update course by ID
+put http://localhost:3000/course/1746286957038
+Content-Type: application/json
+
+{
+    "name": "Architecture with NestJS"
+}
+
+### Get all courses
+get http://localhost:3000/course/page?page=1&limit=10
