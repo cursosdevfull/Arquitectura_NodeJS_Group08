@@ -1,0 +1,21 @@
+services:
+  server-mysql:
+    image: mysql:8
+    container_name: server-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 12345
+    ports:
+      - "3310:3306"
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    networks:
+      - mysql-course-architecture
+
+networks:
+  mysql-course-architecture:
+    driver: bridge
+    name: mysql-course-architecture

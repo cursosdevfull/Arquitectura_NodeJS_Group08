@@ -1,0 +1,39 @@
+get http://localhost:3000/student
+
+###
+post http://localhost:3000/student
+Content-Type: application/json
+
+{
+    "name": "Julio", 
+    "lastname": "Salas",
+    "email": "julio.salas@mydomain.com", 
+    "phone": "999-999-999", 
+    "password": "12345678",
+    "countryISO": "MX", 
+    "genre": "Male", 
+    "age": 32,
+    "skills": [
+        {
+            "description": "JavaScript",
+            "level": "Advanced"
+        }
+    ]
+}
+
+###
+get http://localhost:3000/student/8
+
+###
+put http://localhost:3000/student/8
+Content-Type: application/json
+
+{
+    "lastname": "Puerta"
+}
+
+###
+get http://localhost:3000/student/page?page=1&limit=5
+
+###
+delete http://localhost:3000/student/9

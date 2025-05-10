@@ -16,6 +16,16 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@certificates/*": ["./src/modules/certificates/*"],
+      "@core/*": ["./src/modules/core/*"],
+      "@courses/*": ["./src/modules/courses/*"],
+      "@enrollment/*": ["./src/modules/enrollment/*"],
+      "@payments/*": ["./src/modules/payments/*"],
+      "@schedules/*": ["./src/modules/schedules/*"],
+      "@students/*": ["./src/modules/students/*"],
+      "@videos/*": ["./src/modules/videos/*"],
+    }
   }
 }
