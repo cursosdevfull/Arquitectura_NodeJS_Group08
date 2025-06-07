@@ -1,0 +1,15 @@
+### List
+get http://localhost:3000/v1/role
+
+### Create
+post http://localhost:3000/role
+Content-Type: application/json
+
+{
+  "name": "OPERATOR",
+  "actions": "student:list,student:pagination"
+}
+
+### List2
+get http://localhost:3000/v2/role
+

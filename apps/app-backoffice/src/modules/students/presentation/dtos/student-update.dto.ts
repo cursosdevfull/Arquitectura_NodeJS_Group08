@@ -14,6 +14,7 @@ import {
   MinLength,
   ValidateNested,
 } from "class-validator";
+import { RoleDto } from "./role.dto";
 import { SkillDto } from "./skill.dto";
 
 export class StudentUpdateDto implements StudentPropsUpdate {
@@ -71,4 +72,8 @@ export class StudentUpdateDto implements StudentPropsUpdate {
   @ValidateNested()
   @Type(() => SkillDto)
   skills: SkillDto[];
+
+  @IsOptional()
+  @Type(() => RoleDto)
+  role: RoleDto;
 }

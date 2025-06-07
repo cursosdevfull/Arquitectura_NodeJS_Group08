@@ -1,7 +1,14 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
   "files": {
-    "ignore": [".git", ".github", ".husky", ".turbo", "node_modules"],
+    "ignore": [
+      ".git",
+      ".github",
+      ".husky",
+      ".turbo",
+      "node_modules",
+      "mysql-data"
+    ],
     "ignoreUnknown": true
   },
   "organizeImports": {

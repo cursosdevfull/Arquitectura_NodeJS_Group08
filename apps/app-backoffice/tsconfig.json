@@ -18,14 +18,17 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
+      "@auth/*": ["./src/modules/auth/*"],
       "@certificates/*": ["./src/modules/certificates/*"],
       "@core/*": ["./src/modules/core/*"],
       "@courses/*": ["./src/modules/courses/*"],
       "@enrollment/*": ["./src/modules/enrollment/*"],
       "@payments/*": ["./src/modules/payments/*"],
+      "@roles/*": ["./src/modules/roles/*"],
       "@schedules/*": ["./src/modules/schedules/*"],
       "@students/*": ["./src/modules/students/*"],
       "@videos/*": ["./src/modules/videos/*"],
+
     }
   }
 }

@@ -11,9 +11,6 @@ export class StudentDto {
         StudentDto.fromDomainToData(student),
       ) as StudentEntity[];
     }
-    /* return domain.map((student) => {
-                return plainToInstance(StudentEntity, student.properties)
-            }) */
 
     return plainToInstance(StudentEntity, domain.properties);
   }
@@ -26,6 +23,7 @@ export class StudentDto {
         StudentDto.fromDataToDomain(student),
       ) as Student[];
     }
+
     return plainToInstance(Student, data);
   }
 }

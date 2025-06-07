@@ -15,10 +15,11 @@ import {
   MinLength,
   ValidateNested,
 } from "class-validator";
+import { RoleDto } from "./role.dto";
 import { SkillDto } from "./skill.dto";
 
 export class StudentCreateDto
-  implements Omit<StudentProps, "studentId" | "deletedAt">
+  implements Omit<StudentProps, "studentId" | "deletedAt" | "refreshToken">
 {
   @IsNotEmpty()
   @MinLength(3)
@@ -74,4 +75,8 @@ export class StudentCreateDto
   @ValidateNested()
   @Type(() => SkillDto)
   skills: SkillDto[];
+
+  @IsNotEmpty()
+  @Type(() => RoleDto)
+  role: RoleDto;
 }

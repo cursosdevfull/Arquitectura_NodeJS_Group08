@@ -1,0 +1,23 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 22
+  pre_build:
+    commands:
+      - echo Logging into AWS CodePipeline
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 282865065290.dkr.ecr.us-east-1.amazonaws.com/course-nest
+  build:
+    commands:
+      - echo Build started at `date`
+      - echo Building the docker image
+      - cd apps/app-backoffice
+      - aws s3 cp s3://curso-nest/$ENVIRONMENT/.env .env
+      - docker build -t course-nest .
+      - docker tag course-nest 282865065290.dkr.ecr.us-east-1.amazonaws.com/course-nest
+  post_build:
+    commands:
+      - docker push 282865065290.dkr.ecr.us-east-1.amazonaws.com/course-nest
+artifacts:
+  files:
+    - "Dockerrun.aws.json"

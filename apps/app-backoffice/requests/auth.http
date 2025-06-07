@@ -1,0 +1,40 @@
+###
+post http://localhost:3000/v1/auth/login
+Content-Type: application/json
+
+{
+    "email": "percy.torres@mydomain.com", 
+    "password": "12345678"
+}
+
+###
+post http://localhost:3000/v1/auth/verify-otp
+Content-Type: application/json
+
+{
+    "uuid": "adfc9a70-8cd5-41ca-b62d-ca8f6db6729d",
+    "token": "698959"
+}
+
+
+### Logout
+post http://localhost:3000/auth/logout
+Content-Type: application/json
+
+{
+"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSm9yZ2UiLCJsYXN0bmFtZSI6IkFsZmFybyIsImlhdCI6MTc0ODA5NjQwNSwiZXhwIjoxNzUwNjg4NDA1fQ.9q-gMCGuvRox6m_JFxkdtcsXYUci5Hb59YKrXCVcSZk"
+}
+
+### Refresh Token
+post http://localhost:3000/v1/auth/refresh-token
+Content-Type: application/json
+
+{
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQXVndXN0byIsImxhc3RuYW1lIjoiTGFuYXR0YSIsImlhdCI6MTc0ODY5OTYyMSwiZXhwIjoxNzUxMjkxNjIxfQ.uBafEyT6TpDIBJSpAC0E0JN46RR6CUklMkN1zLtppSU"
+}
+
+
+#{
+#  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFkZmM5YTcwLThjZDUtNDFjYS1iNjJkLWNhOGY2ZGI2NzI5ZCIsIm5hbWUiOiJQZXJjeSIsImxhc3RuYW1lIjoiVG9ycmVzIiwiYWN0aW9ucyI6InN0dWRlbnQ6cmVhZCxzdHVkZW50Omxpc3Qsc3R1ZGVudDpwYWdpbmF0aW9uLHN0dWRlbnQ6Y3JlYXRlLHN0dWRlbnQ6dXBkYXRlLHN0dWRlbnQ6ZGVsZXRlIiwiaWF0IjoxNzQ4NzExNzE3LCJleHAiOjE3NDg3Mjk3MTd9.vMAKqKzciBCL5FkZYZEcULE3Z7fS1dbEGstn7_0V-LY",
+#  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGVyY3kiLCJsYXN0bmFtZSI6IlRvcnJlcyIsImlhdCI6MTc0ODcxMTcxNywiZXhwIjoxNzUxMzAzNzE3fQ.XBtTdv-tZEcCe5Hcqsp2P_z92ziron7ibg_no8UVVrU"
+#}

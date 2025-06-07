@@ -13,21 +13,7 @@ export class StudentAdapter implements StudentPort {
   ) {}
 
   async save(student: Student): Promise<Student> {
-    const _props = student.properties;
-
     const studentEntity = StudentDto.fromDomainToData(student) as StudentEntity;
-
-    /*         const studentEntity = new StudentEntity();
-        studentEntity.studentId = props.studentId;
-        studentEntity.name = props.name;
-        studentEntity.lastname = props.lastname;
-        studentEntity.email = props.email;
-        studentEntity.phone = props.phone;
-        studentEntity.password = props.password;
-        studentEntity.countryISO = props.countryISO;
-        studentEntity.genre = props.genre;
-        studentEntity.age = props.age;
-        studentEntity.deletedAt = props.deletedAt; */
 
     const result = await this.repository.save(studentEntity);
 
@@ -37,6 +23,33 @@ export class StudentAdapter implements StudentPort {
   async findById(studentId: number): Promise<Student | null> {
     const result = await this.repository.findOne({
       where: { studentId, deletedAt: IsNull() },
+      relations: ["role", "skills"],
+    });
+
+    if (result) {
+      return StudentDto.fromDataToDomain(result) as Student;
+    }
+
+    return null;
+  }
+
+  async findByEmail(email: string): Promise<Student | null> {
+    const result = await this.repository.findOne({
+      where: { email, deletedAt: IsNull() },
+      relations: ["role", "skills"],
+    });
+
+    if (result) {
+      return StudentDto.fromDataToDomain(result) as Student;
+    }
+
+    return null;
+  }
+
+  async findByUuid(uuid: string): Promise<Student | null> {
+    const result = await this.repository.findOne({
+      where: { uuid, deletedAt: IsNull() },
+      relations: ["role", "skills"],
     });
 
     if (result) {
@@ -49,7 +62,7 @@ export class StudentAdapter implements StudentPort {
   async findAll(): Promise<Student[]> {
     const students = await this.repository.find({
       where: { deletedAt: IsNull() },
-      relations: ["skills"],
+      relations: ["skills", "role"],
     });
 
     return students.map((student) =>
@@ -65,7 +78,7 @@ export class StudentAdapter implements StudentPort {
       skip,
       take,
       where: { deletedAt: IsNull() },
-      relations: ["skills"],
+      relations: ["skills", "role"],
       order: { lastname: "ASC", name: "DESC" },
     });
 

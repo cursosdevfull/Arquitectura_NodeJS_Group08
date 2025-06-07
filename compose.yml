@@ -8,6 +8,12 @@ services:
       MYSQL_DATABASE: db
       MYSQL_USER: user
       MYSQL_PASSWORD: 12345
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 8s
     ports:
       - "3310:3306"
     volumes:
@@ -15,6 +21,35 @@ services:
     networks:
       - mysql-course-architecture
 
+  server-redis:
+    image: redis:6.0.5-alpine
+    container_name: server-redis
+    command: redis-server --requirepass 12345
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "12345", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 8s
+    restart: always
+    ports:
+      - "6380:6379"
+    networks:
+      - mysql-course-architecture
+
+  client-redis:
+    image: rediscommander/redis-commander:latest
+    container_name: client-redis
+    restart: always
+    ports:
+      - "5500:8081"
+    environment:
+      - REDIS_HOST=server-redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=12345
+    networks:
+      - mysql-course-architecture
+      
 networks:
   mysql-course-architecture:
     driver: bridge

@@ -7,6 +7,9 @@ export class StudentApplication {
   constructor(@Inject(StudentAdapter) private readonly port: StudentPort) {}
 
   async create(student: Student) {
+    const studentExists = await this.port.findByEmail(student.properties.email);
+    if (studentExists) throw new Error("Student already exists");
+
     return await this.port.save(student);
   }
 

@@ -2,3 +2,4 @@
 app-services
 node_modules
 mysql-data
+.env

@@ -1,16 +1,18 @@
-get http://localhost:3000/student
+get http://localhost:3000/v1/student
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRiNTJmZTA0LWIwOTgtNDNkNS1iZDUyLTkxYjJjOThiM2Q1NSIsIm5hbWUiOiJBdWd1c3RvIiwibGFzdG5hbWUiOiJMYW5hdHRhIiwiYWN0aW9ucyI6InN0dWRlbnQ6cmVhZCxzdHVkZW50Omxpc3Qsc3R1ZGVudDpwYWdpbmF0aW9uLHN0dWRlbnQ6Y3JlYXRlLHN0dWRlbnQ6dXBkYXRlLHN0dWRlbnQ6ZGVsZXRlIiwiaWF0IjoxNzQ4Njk5NjIxLCJleHAiOjE3NDg3MTc2MjF9.RytLOca95WdCHHao61zix4qW6hXuZP_ZMVvvq2JnnOc
 
 ###
-post http://localhost:3000/student
+post http://localhost:3000/v1/student
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRiNTJmZTA0LWIwOTgtNDNkNS1iZDUyLTkxYjJjOThiM2Q1NSIsIm5hbWUiOiJBdWd1c3RvIiwibGFzdG5hbWUiOiJMYW5hdHRhIiwiYWN0aW9ucyI6InN0dWRlbnQ6cmVhZCxzdHVkZW50Omxpc3Qsc3R1ZGVudDpwYWdpbmF0aW9uLHN0dWRlbnQ6Y3JlYXRlLHN0dWRlbnQ6dXBkYXRlLHN0dWRlbnQ6ZGVsZXRlIiwiaWF0IjoxNzQ4Njk5NjIxLCJleHAiOjE3NDg3MTc2MjF9.RytLOca95WdCHHao61zix4qW6hXuZP_ZMVvvq2JnnOc
 
 {
-    "name": "Julio", 
-    "lastname": "Salas",
-    "email": "julio.salas@mydomain.com", 
+    "name": "Percy", 
+    "lastname": "Torres",
+    "email": "percy.torres@mydomain.com", 
     "phone": "999-999-999", 
     "password": "12345678",
-    "countryISO": "MX", 
+    "countryIso": "MX", 
     "genre": "Male", 
     "age": 32,
     "skills": [
@@ -18,11 +20,16 @@ Content-Type: application/json
             "description": "JavaScript",
             "level": "Advanced"
         }
-    ]
+    ],
+    "role": {
+        "roleId": 1
+    }
 }
 
 ###
-get http://localhost:3000/student/8
+get http://localhost:3000/student/23
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU5OTljODA3LTdkYjAtNGE4Yy04YzVkLTI2MDIzNGNjYzNjZSIsIm5hbWUiOiJKb3JnZSIsImxhc3RuYW1lIjoiQWxmYXJvIiwiYWN0aW9ucyI6InN0dWRlbnQ6cmVhZCxzdHVkZW50Omxpc3Qsc3R1ZGVudDpwYWdpbmF0aW9uLHN0dWRlbnQ6Y3JlYXRlLHN0dWRlbnQ6dXBkYXRlLHN0dWRlbnQ6ZGVsZXRlIiwiaWF0IjoxNzQ4MTA1NDA0LCJleHAiOjE3NDgxMjM0MDR9.hFb2eYl5Ba-4tnNLl0Tn0KLqZLH12VeKcqcHYP67RJ0
+
 
 ###
 put http://localhost:3000/student/8
@@ -33,7 +40,11 @@ Content-Type: application/json
 }
 
 ###
-get http://localhost:3000/student/page?page=1&limit=5
+get http://localhost:3000/v1/student/page?page=1&limit=5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRiNTJmZTA0LWIwOTgtNDNkNS1iZDUyLTkxYjJjOThiM2Q1NSIsIm5hbWUiOiJBdWd1c3RvIiwibGFzdG5hbWUiOiJMYW5hdHRhIiwiYWN0aW9ucyI6InN0dWRlbnQ6cmVhZCxzdHVkZW50Omxpc3Qsc3R1ZGVudDpwYWdpbmF0aW9uLHN0dWRlbnQ6Y3JlYXRlLHN0dWRlbnQ6dXBkYXRlLHN0dWRlbnQ6ZGVsZXRlIiwiaWF0IjoxNzQ4Njk5NjIxLCJleHAiOjE3NDg3MTc2MjF9.RytLOca95WdCHHao61zix4qW6hXuZP_ZMVvvq2JnnOc
 
 ###
-delete http://localhost:3000/student/9
+delete http://localhost:3000/v1/student/31
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRiNTJmZTA0LWIwOTgtNDNkNS1iZDUyLTkxYjJjOThiM2Q1NSIsIm5hbWUiOiJBdWd1c3RvIiwibGFzdG5hbWUiOiJMYW5hdHRhIiwiYWN0aW9ucyI6InN0dWRlbnQ6cmVhZCxzdHVkZW50Omxpc3Qsc3R1ZGVudDpwYWdpbmF0aW9uLHN0dWRlbnQ6Y3JlYXRlLHN0dWRlbnQ6dXBkYXRlLHN0dWRlbnQ6ZGVsZXRlIiwiaWF0IjoxNzQ4Njk5NjIxLCJleHAiOjE3NDg3MTc2MjF9.RytLOca95WdCHHao61zix4qW6hXuZP_ZMVvvq2JnnOc
+
+

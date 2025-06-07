@@ -1,0 +1,6 @@
+node_modules
+.turbo
+brute-force-attack
+dist
+requests
+test
